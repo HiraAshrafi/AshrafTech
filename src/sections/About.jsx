@@ -189,7 +189,7 @@ const About = () => {
             >
               I'm a{" "}
               <span className="font-semibold text-white">
-                Mobile Application Developer
+                Software Engineer
               </span>{" "}
               with 2+ years of experience in Flutter and 6 months of
               experience in Kotlin, building and maintaining user-friendly

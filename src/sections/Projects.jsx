@@ -1,122 +1,58 @@
-
 import { motion } from "framer-motion";
 import ProjectCard from "../components/ProjectCard";
-
-const projects = [
-  {
-    title: "Motive Entertainment",
-    category: "Flutter Application",
-    description:
-      "A live mobile app delivered for a UK client, bringing a Figma concept to life so users can discover local food and drink deals, venue atmospheres, and trending nearby spots.",
-    technologies: ["Flutter", "Dart", "Figma UI Implementation"],
-    features: [
-      "Discover local food and drink deals",
-      "Explore venue atmosphere insights",
-      "Find trending nearby places",
-      "Modern Figma-based mobile interface",
-    ],
-    googlePlay: "https://lnkd.in/gN3N8FH2",
-    featured: true,
-  },
-  {
-    title: "Journal App & Mood Tracker",
-    category: "Flutter Application",
-    description:
-      "A Flutter app taken from Figma design to production, with a focus on maintainable code, reusable widgets, and performance optimization.",
-    technologies: ["Flutter", "Dart", "Reusable Widgets"],
-    features: [
-      "Journal entries",
-      "Mood tracking",
-      "Reusable Flutter widgets",
-      "Performance-focused implementation",
-    ],
-    googlePlay: "https://lnkd.in/gZw6cKMi",
-  },
-];
+import { projects } from "../data/projects";
 
 function Projects() {
-  const featuredProjects = projects.filter(
-    (project) => project.featured
-  );
-
-  const otherProjects = projects.filter(
-    (project) => !project.featured
-  );
-
   return (
     <section
       id="projects"
-      className="bg-slate-950 px-4 py-10 sm:px-6 sm:py-10 lg:px-20"
+      className="relative overflow-hidden bg-slate-950 px-4 py-20 sm:px-6 lg:px-12"
     >
-      <div className="mx-auto max-w-7xl">
-        {/* Section heading */}
+      <div className="pointer-events-none absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-cyan-500/[0.06] blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-blue-500/[0.05] blur-3xl" />
+
+      <div className="relative mx-auto max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="mb-12 text-center sm:mb-14"
+          className="mb-12 text-center sm:mb-16"
         >
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-400 sm:text-sm">
-            My Work
+            My Project
           </p>
-
           <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
-            Mobile Applications
+            Selected <span className="text-cyan-400">Mobile Applications</span>
           </h2>
-
-          <div className="mx-auto mt-5 h-1 w-20 rounded-full bg-cyan-400" />
-
+          <div className="mx-auto mt-5 h-1 w-20 rounded-full bg-cyan-400 shadow-[0_0_18px_rgba(34,211,238,0.35)]" />
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
-            Flutter applications built from design through deployment,
-            with a focus on thoughtful interfaces and reliable performance.
+            A closer look at the apps I’ve designed and built, with real screens
+            from Google Play, project details, and the tools behind each release.
           </p>
         </motion.div>
 
-        {/* Featured project */}
-        {featuredProjects.map((project) => (
-          <div key={project.title} className="mb-10">
-            <ProjectCard project={project} featured />
-          </div>
-        ))}
-
-        {/* Other projects */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
-          {otherProjects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-              }}
-            >
-              <ProjectCard project={project} />
-            </motion.div>
+        <div className="space-y-7">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
 
-        {/* GitHub CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-14 text-center sm:mt-16"
+          transition={{ duration: 0.5 }}
+          className="mt-12 text-center sm:mt-16"
         >
           <p className="mb-5 text-sm text-slate-400 sm:text-base">
-            Want to see more of my projects?
+            Want to see all of my projects?
           </p>
-
           <a
-            href="https://github.com/HiraAshrafi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center rounded-lg border border-cyan-400/40 px-5 py-3 text-sm font-semibold text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950 sm:text-base"
+            href="/projects"
+            className="inline-flex items-center rounded-xl border border-cyan-400/40 bg-cyan-400/5 px-5 py-3 text-sm font-semibold text-cyan-300 transition hover:border-cyan-300 hover:bg-cyan-400 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-400"
           >
-            View More on GitHub
+            See More Projects
           </a>
         </motion.div>
       </div>

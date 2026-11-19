@@ -211,7 +211,7 @@ const Hero = () => {
               className="mt-5"
             >
               <h2 className="text-xl font-semibold text-slate-200 sm:text-2xl md:text-3xl">
-                Mobile Application Developer
+                Software Engineer
               </h2>
 
               <p className="mt-2 text-base text-slate-500 sm:text-lg">

@@ -5,6 +5,7 @@ import {
   FaPhone,
   FaTimes,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -23,11 +24,12 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Show success popup
+    const subject = encodeURIComponent(`Portfolio enquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`,
+    );
+    window.location.href = `mailto:ashrafiashra038@gmail.com?subject=${subject}&body=${body}`;
     setShowPopup(true);
-
-    // Reset form
     setFormData({
       name: "",
       email: "",
@@ -38,27 +40,32 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-slate-900 px-6 py-10 text-white"
+      className="relative overflow-hidden bg-slate-900/60 px-5 py-20 text-white sm:px-6 lg:px-12"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="pointer-events-none absolute right-0 top-1/3 h-80 w-80 rounded-full bg-cyan-500/5 blur-3xl" />
+      <div className="relative mx-auto max-w-6xl">
 
         {/* Heading */}
-        <div className="mb-14 text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-[4px] text-cyan-400">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-14 text-center"
+        >
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-400 sm:text-sm">
             Get In Touch
           </p>
 
-          <h2 className="text-4xl font-bold md:text-5xl">
-            Contact Me
+          <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
+            Let's Build Something <span className="text-cyan-400">Great</span>
           </h2>
 
-          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-cyan-400" />
+          <div className="mx-auto mt-5 h-1 w-16 rounded-full bg-cyan-400" />
 
-          <p className="mx-auto mt-5 max-w-2xl text-slate-400">
-            Have a project idea or want to work together?
-            Feel free to contact me.
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
+            Have a project idea or a mobile role in mind? Send a message and start a conversation.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid gap-10 md:grid-cols-2">
 
