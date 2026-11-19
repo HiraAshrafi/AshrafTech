@@ -44,8 +44,13 @@ function ProjectsPage() {
         </motion.header>
 
         <div className="space-y-7">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.title}
+              project={project}
+              index={index}
+              total={projects.length}
+            />
           ))}
         </div>
       </div>
