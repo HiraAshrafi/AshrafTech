@@ -9,6 +9,11 @@ import {
 
 const opusPhotos = [
   {
+    src: "/images/experience/opus/office-team.jpg",
+    alt: "Team posing for a group photo in the Opus Technology office",
+    caption: "Office team",
+  },
+  {
     src: "/images/experience/opus/exhibition-team.webp",
     alt: "Opus Technology team at a company exhibition booth",
     caption: "Company booth",
@@ -22,6 +27,26 @@ const opusPhotos = [
     src: "/images/experience/opus/team-refreshments.jpg",
     alt: "Refreshments prepared for an Opus Technology team gathering",
     caption: "Team gathering",
+  },
+  {
+    src: "/images/experience/opus/team-conversation.jpg",
+    alt: "Opus colleagues talking during a team lunch",
+    caption: "Team lunch",
+  },
+  {
+    src: "/images/experience/opus/team-gathering.jpg",
+    alt: "Opus Technology colleagues together at a team gathering",
+    caption: "Team photo",
+  },
+  {
+    src: "/images/experience/opus/team-lunch.jpg",
+    alt: "Colleague holding a plate at the Opus team lunch",
+    caption: "Lunch gathering",
+  },
+  {
+    src: "/images/experience/opus/team-celebration.jpg",
+    alt: "Opus colleagues celebrating around a cake",
+    caption: "Team celebration",
   },
 ];
 
@@ -72,7 +97,7 @@ function OfficeGallery({ company, photos = [] }) {
       className="mt-5"
     >
       {photos.length > 0 ? (
-        <div className="grid h-48 grid-cols-3 grid-rows-2 gap-2 sm:h-52">
+        <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
           {photos.map((photo, index) => (
             <a
               key={photo.src}
@@ -81,7 +106,7 @@ function OfficeGallery({ company, photos = [] }) {
               rel="noopener noreferrer"
               aria-label={`Open full-size photo: ${photo.alt}`}
               className={`group/photo relative min-w-0 overflow-hidden rounded-xl border border-white/[0.08] bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 ${
-                index === 0 ? "col-span-2 row-span-2" : ""
+                index === 0 ? "col-span-2 aspect-[16/9]" : "aspect-[4/3]"
               }`}
             >
               <img
@@ -89,7 +114,7 @@ function OfficeGallery({ company, photos = [] }) {
                 alt={photo.alt}
                 loading="lazy"
                 decoding="async"
-                className="h-full w-full object-cover transition-transform duration-500 group-hover/photo:scale-105"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover/photo:scale-105"
               />
               <div
                 aria-hidden="true"
