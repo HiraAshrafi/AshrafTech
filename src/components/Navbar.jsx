@@ -8,6 +8,7 @@ const links = [
   { name: "Skills", id: "skills" },
   { name: "Experience", id: "experience" },
   { name: "Projects", id: "projects" },
+  { name: "Achievements", id: "achievements" },
   { name: "Education", id: "education" },
   { name: "Contact", id: "contact" },
 ];
@@ -16,22 +17,34 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isProjectsPage =
     window.location.pathname.replace(/\/+$/, "") === "/projects";
+  const isAchievementsPage =
+    window.location.pathname.replace(/\/+$/, "") === "/achievements";
   const [activeSection, setActiveSection] = useState(
-    isProjectsPage ? "projects" : "home",
+    isAchievementsPage
+      ? "achievements"
+      : isProjectsPage
+        ? "projects"
+        : "home",
   );
   const [isScrolled, setIsScrolled] = useState(false);
   const menuButtonRef = useRef(null);
   const homePath = isProjectsPage ? "/" : "";
   const navLinks = useMemo(
-    () => links.map((link) => ({ ...link, href: `${homePath}#${link.id}` })),
+    () =>
+      links.map((link) =>
+        link.id === "achievements"
+          ? { ...link, href: "/achievements" }
+          : { ...link, href: `${homePath}#${link.id}` },
+      ),
     [homePath],
   );
 
   useEffect(() => {
     const sections = navLinks
-      .map((link) =>
-        document.querySelector(new URL(link.href, window.location.href).hash),
-      )
+      .map((link) => {
+        const hash = new URL(link.href, window.location.href).hash;
+        return hash ? document.querySelector(hash) : null;
+      })
       .filter(Boolean);
 
     if (!sections.length) return undefined;

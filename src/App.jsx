@@ -11,10 +11,14 @@ import Projects from "./sections/Projects";
 import Education from "./sections/Education";
 import Contact from "./sections/Contact";
 import ProjectsPage from "./pages/ProjectsPage";
+import AchievementsPage from "./pages/AchievementsPage";
+import Achievements from "./sections/Achievements";
 
 function App() {
   const isProjectsPage =
     window.location.pathname.replace(/\/+$/, "") === "/projects";
+  const isAchievementsPage =
+    window.location.pathname.replace(/\/+$/, "") === "/achievements";
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, {
     stiffness: 120,
@@ -57,6 +61,8 @@ function App() {
       <main>
         {isProjectsPage ? (
           <ProjectsPage />
+        ) : isAchievementsPage ? (
+          <AchievementsPage />
         ) : (
           <>
             <Hero />
@@ -64,6 +70,7 @@ function App() {
             <Skills />
             <Experience />
             <Projects />
+            <Achievements />
             <Education />
             <Contact />
           </>
