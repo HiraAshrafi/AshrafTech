@@ -17,10 +17,11 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
+  font-family: "Inter", "SF Pro Display", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--navy);
   color: white;
+  overflow-x: hidden;
 }
 
 * {
@@ -30,6 +31,22 @@ body {
 section {
   position: relative;
   isolation: isolate;
+}
+
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+textarea {
+  outline-offset: 4px;
 }
 
 body::before {
@@ -79,6 +96,14 @@ body::after {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #0891b2;
+}
+
+.premium-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 82%);
 }
 
 a,

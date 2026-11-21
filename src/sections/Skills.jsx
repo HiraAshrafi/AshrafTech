@@ -67,7 +67,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative overflow-hidden bg-slate-900/40 
+      className="relative overflow-hidden border-y border-slate-900/80 bg-slate-950
       px-5 py-10 sm:px-6 md:px-10 md:py-10 lg:px-12"
     >
       {/* Background Effects */}
@@ -132,7 +132,7 @@ const Skills = () => {
         </motion.div>
 
         {/* ================= SKILL GROUPS ================= */}
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {skillGroups.map((group, index) => (
             <motion.div
               key={group.title}

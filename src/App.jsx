@@ -37,6 +37,12 @@ function App() {
 
   return (
     <>
+      <a
+        href="#home"
+        className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-xl bg-cyan-300 px-4 py-3 text-sm font-bold text-slate-950 shadow-xl transition focus:translate-y-0"
+      >
+        Skip to content
+      </a>
       <motion.div
         className="fixed inset-x-0 top-0 z-[70] h-[2px] origin-left bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]"
         style={{ scaleX: progress }}

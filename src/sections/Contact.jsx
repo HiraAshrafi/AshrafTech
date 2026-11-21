@@ -40,7 +40,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-slate-900/60 px-5 py-20 text-white sm:px-6 lg:px-12"
+      className="relative overflow-hidden border-t border-slate-900/80 bg-[linear-gradient(180deg,#050d1b_0%,#020617_100%)] px-5 py-20 text-white sm:px-6 lg:px-12"
     >
       <div className="pointer-events-none absolute right-0 top-1/3 h-80 w-80 rounded-full bg-cyan-500/5 blur-3xl" />
       <div className="relative mx-auto max-w-6xl">
@@ -256,9 +256,8 @@ const Contact = () => {
             </h3>
 
             <p className="mb-7 leading-7 text-slate-400">
-              Your message has been submitted successfully.
-              Thank you for reaching out! I'll get back to you
-              as soon as possible.
+              Your email application should now be open with the message ready
+              to send. Thank you for reaching out!
             </p>
 
             {/* Close Popup */}

@@ -36,11 +36,11 @@ const About = () => {
       id="about"
       className="
         relative overflow-hidden
-        bg-slate-950
-        px-5 py-2
+        bg-[linear-gradient(180deg,#020617_0%,#050d1b_100%)]
+        px-5 py-20
         sm:px-6 sm:py-24
         md:px-10
-        lg:px-12 lg:py-10
+        lg:px-12
       "
     >
       {/* =====================================================

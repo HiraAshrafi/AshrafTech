@@ -45,10 +45,11 @@ const Hero = () => {
       id="home"
       className="
         relative min-h-screen overflow-hidden
-        bg-slate-950
+        bg-[radial-gradient(circle_at_78%_24%,rgba(34,211,238,0.11),transparent_20rem),linear-gradient(145deg,#020617_0%,#020617_55%,#07111f_100%)]
         pt-20
       "
     >
+      <div className="premium-grid pointer-events-none absolute inset-0 opacity-40" />
       {/* =====================================================
           BACKGROUND 3D EFFECTS
       ====================================================== */}
@@ -154,17 +155,14 @@ const Hero = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="mb-5 flex items-center gap-3"
+              className="mb-5 inline-flex items-center gap-3 rounded-full border border-cyan-300/15 bg-cyan-300/[0.055] px-3 py-2"
             >
-              <motion.span
-                initial={{ width: 0 }}
-                animate={{ width: 40 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="h-px bg-cyan-400"
-              />
-
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-400 sm:text-sm">
-                Hello, I'm
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              </span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-cyan-200 sm:text-xs">
+                Open to opportunities
               </span>
             </motion.div>
 
@@ -349,7 +347,7 @@ const Hero = () => {
               <div className="hidden h-px w-10 bg-slate-800 sm:block sm:w-16" />
 
               <span className="text-xs text-slate-500 sm:text-sm">
-                Available for opportunities
+                Based in Dhaka, Bangladesh
               </span>
             </motion.div>
 

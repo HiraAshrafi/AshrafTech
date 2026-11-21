@@ -21,7 +21,7 @@ const education = [
 const Education = () => (
   <section
     id="education"
-    className="relative overflow-hidden bg-slate-950 px-5 py-20 text-white sm:px-6 lg:px-12"
+    className="relative overflow-hidden border-y border-slate-900/80 bg-slate-950 px-5 py-20 text-white sm:px-6 lg:px-12"
   >
     <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-cyan-500/5 blur-3xl" />
     <div className="relative mx-auto max-w-6xl">

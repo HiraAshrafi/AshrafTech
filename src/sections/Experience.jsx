@@ -50,6 +50,44 @@ const opusPhotos = [
   },
 ];
 
+const softvancePhotos = [
+  {
+    src: "/images/experience/softvance/workspace.jpg",
+    alt: "Hira working at the Softvance IT Ltd. development desk",
+    caption: "Development workspace",
+  },
+  {
+    src: "/images/experience/softvance/team-meeting.jpg",
+    alt: "Softvance team meeting in the office conference room",
+    caption: "Team meeting",
+  },
+  {
+    src: "/images/experience/softvance/development-desk.jpg",
+    alt: "Mobile and web development setup at Softvance",
+    caption: "Development setup",
+  },
+  {
+    src: "/images/experience/softvance/birthday-cake.jpg",
+    alt: "Birthday cake celebration at Softvance",
+    caption: "Birthday celebration",
+  },
+  {
+    src: "/images/experience/softvance/team-celebration.jpg",
+    alt: "Softvance colleagues celebrating a team birthday",
+    caption: "Team celebration",
+  },
+  {
+    src: "/images/experience/softvance/developer-session.jpg",
+    alt: "Softvance team participating in a developer session",
+    caption: "Developer session",
+  },
+  {
+    src: "/images/experience/softvance/team-presentation.jpg",
+    alt: "Team presentation at the Softvance office",
+    caption: "Team presentation",
+  },
+];
+
 const experiences = [
   {
     company: "Softvance IT Ltd.",
@@ -57,6 +95,7 @@ const experiences = [
     role: "Mobile Application Developer (Kotlin)",
     period: "August 2024 – Present",
     type: "Kotlin",
+    gallery: softvancePhotos,
     description:
       "Developing and maintaining native Android applications using Kotlin and the Android SDK.",
     responsibilities: [
