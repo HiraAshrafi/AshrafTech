@@ -1,0 +1,73 @@
+{
+  "info": {
+    "name": "Hira Ashrafi Portfolio API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Profile",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/profile/"
+      }
+    },
+    {
+      "name": "Skills",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/skills/"
+      }
+    },
+    {
+      "name": "Education",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/education/"
+      }
+    },
+    {
+      "name": "Experience",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/experience/"
+      }
+    },
+    {
+      "name": "Projects",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/projects/"
+      }
+    },
+    {
+      "name": "Achievements",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/achievements/"
+      }
+    },
+    {
+      "name": "Submit Contact Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"message\": \"Hello Hira\"\n}"
+        },
+        "url": "{{baseUrl}}/api/contact/"
+      }
+    }
+  ]
+}
